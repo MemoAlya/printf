@@ -4,6 +4,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	va_list args;
+
 	va_start(args, format);
 	while (*format)
 	{
@@ -17,7 +18,8 @@ int _printf(const char *format, ...)
 						char c = va_arg(args, int);
 						putchar(c);
 						count++;
-						break;}
+						break;
+					}
 				case 's':
 					{
 						char *str = va_arg(args, char*);
@@ -45,10 +47,11 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return count;
+	return (count);
 }
+
 int main(void)
 {
 	_printf("Hello, %s! The answer is %d%c\n", "world", 42, '.');
-	return 0;
+	return (0);
 }
