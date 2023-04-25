@@ -2,9 +2,9 @@
 
 int _printf(const char *format, ...)
 {
+	int count = 0;
 	va_list args;
 	va_start(args, format);
-	int count = 0;
 	while (*format)
 	{
 		if (*format == '%')
@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return count;
 }
-int main(int argc, char *argv[])
+int main(void)
 {
 	_printf("Hello, %s! The answer is %d%c\n", "world", 42, '.');
 	return 0;
